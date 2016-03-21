@@ -1,0 +1,73 @@
+<html>
+<head>
+  <title>Simple Sidebar CSS</title>
+  <link href="../css/sidebar.css" media="all" rel="stylesheet" type="text/css" />
+  <link href="../css/style.css" media="all" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <div class='sidebar-wrapper has-right-sidebar'>
+    <div id="sidebar" class="easy-animation">
+      <div class="sidebar-content-wrapper">
+        <button class="sidebar-toggler pull-right">Close</button>
+        <a href="https://github.com/ilp416/sidebar">Github</a>
+        <a href="" class="turn-side">Turn Side</a>
+        <small><em>Click by this link will toggle "has-right-sidebar" and "has-left-sidebar" classes only.</em></small>
+      </div>
+    </div>
+    <div id="content" class="easy-animation">
+      <article>
+        <button class="sidebar-toggler pull-right">Menu</button>
+
+        <h1>Simple SideBar</h1>
+        <p>Small, 50-css-strings, simple CSS sidebar. It can be toggled(JS) on small screens, and always showed otherwise.</p>
+
+
+        <h2>Get started</h2>
+
+        <p>Include the library in the HEAD tag of your page:</p>
+        <pre>
+        &lt;link rel="stylesheet" href="sidebar.css"&gt;&lt;/link&gt;
+        </pre>
+
+        <p>All you need to do is have #content, #sidebar and wrap thats in .has-left-sidebar or .has-right-sidebar:</p>
+        <pre>
+        &lt;div class="has-right-sidebar"&gt;
+          &lt;div id="sidebar" &gt;&lt;/div &gt;
+          &lt;div id="content" &gt;&lt;/div &gt;
+        &lt;/div&gt;
+        </pre>
+
+        <p>You can found some styles in style.css. It's not required, but usefull in most cases: setup color of sidebar, paddings, animation, some mistakes what strict eye will see.</p>
+        <p>Most likely you want to have element to toggle menu on small screens. You can add button or link and use for toggle something like this Jquery:</p>
+        <pre>
+        &lt;script&gt;
+          $(document).on('click', '.sidebar-toggler', function(){
+            $(".sidebar-wrapper").toggleClass("toggled");
+          });
+        &lt;/script&gt;
+        </pre>
+
+
+        <h2>Credits</h2>
+        <p>I found and use template from <a href="http://startbootstrap.com/template-overviews/simple-sidebar/">http://startbootstrap.com</a>. All works were perform by them. I only simplified it, and made some cusmomizing for my tasks. Thanks.
+      </article>
+      <foot>
+      </foot>
+    </div>
+  </div>
+  <script
+    src="https://code.jquery.com/jquery-1.12.2.min.js"
+    integrity="sha256-lZFHibXzMHo3GGeehn1hudTAP3Sc0uKXBXAzHX1sjtk="
+    crossorigin="anonymous"></script>
+  <script>
+    $(document).on('click', '.sidebar-toggler', function(){
+      $(".sidebar-wrapper").toggleClass("toggled");
+    });
+    $(document).on('click', '.turn-side', function(){
+      $(".sidebar-wrapper").toggleClass("has-right-sidebar");
+      $(".sidebar-wrapper").toggleClass("has-left-sidebar");
+      return false;
+    });
+  </script>
+</body>
+</html>
