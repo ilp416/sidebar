@@ -1,0 +1,43 @@
+/*Use px value only
+$sidebar-width: 250px
+
+#sidebar
+  z-index: 1000
+  position: fixed
+  top: 0
+  width: 0 
+  height: 100%
+  overflow-y: auto
+  overflow-x: hidden
+
+.has-right-sidebar,
+.has-left-sidebar
+  &.toggled_sidebar
+    #sidebar
+      width: $sidebar-width
+
+.has-right-sidebar #sidebar
+  right: 0
+.has-left-sidebar #sidebar
+  left: 0
+
+@media (min-width: 768px)
+  .has-left-sidebar #content-wrapper
+    padding-left: $sidebar-width
+  .has-right-sidebar #content-wrapper
+    padding-right: $sidebar-width
+  #sidebar
+    width: $sidebar-width
+  #content-wrapper
+    position: relative
+
+/* Sidebar Styles
+#content-wrapper,
+#sidebar
+  -webkit-transition: all 0.5s ease
+  -moz-transition: all 0.5s ease
+  -o-transition: all 0.5s ease
+  transition: all 0.5s ease
+
+.sidebar_content
+  min-width: $sidebar-width
